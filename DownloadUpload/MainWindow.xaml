@@ -1,0 +1,33 @@
+﻿<Window x:Class="DownloadUpload.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DownloadUpload"
+        mc:Ignorable="d"
+        Title="MainWindow" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    <Grid Height="130" Width="290">
+        <TabControl x:Name="tabs" SelectionChanged="tabs_TabSelected">
+            <TabItem x:Name="tiDownload" Header="Download">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="tbDownloadIp" HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" MaxLength="15"/>
+                    <TextBox x:Name="tbDownloadPort" HorizontalAlignment="Left" Height="20" Margin="152,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" MaxLength="5"/>
+                    <Label Content=":" HorizontalAlignment="Left" Margin="140,5,0,0" Height="25" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbDownloadFolder" HorizontalAlignment="Left" Height="20" Margin="10,40,0,0" IsReadOnly="True" VerticalAlignment="Top" Width="200"/>
+                    <Button x:Name="btnFolder" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,40,0,0" Height="20" Width="50" Content="Folder" Click="btnFolder_Click" />
+                    <Button x:Name="btnDownload" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,70,0,0" Height="20" Width="70" Content="Download" Click="StartDownloading" />
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tiUpload"  Header="Upload">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="tbUploadIp" HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" MaxLength="15"/>
+                    <TextBox x:Name="tbUploadPort" HorizontalAlignment="Left" Height="20" Margin="152,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" MaxLength="5"/>
+                    <Label Content=":" HorizontalAlignment="Left" Margin="140,5,0,0" Height="25" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbUploadFilePath" HorizontalAlignment="Left" Height="20" Margin="10,40,0,0" IsReadOnly="True" VerticalAlignment="Top" Width="200"/>
+                    <Button x:Name="btnFile" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,40,0,0" Height="20" Width="50"  Content="File" Click="btnFile_Click" />
+                    <Button x:Name="btnUpload" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,70,0,0" Height="20" Width="70" Content="Upload" Click="StartUploading" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
